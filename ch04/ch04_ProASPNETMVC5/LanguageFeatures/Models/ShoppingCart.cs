@@ -4,6 +4,6 @@ namespace LanguageFeatures.Models
 {
 	public class ShoppingCart
 	{
-		List<Product> Products { get; set; }
+		public List<Product> Products { get; set; }
 	}
 }
