@@ -144,21 +144,9 @@ namespace LanguageFeatures.Controllers
                 new Product { Name = "Corner flag", Category = "Soccer", Price = 34.95M }
             };
 
-			var foundProducts = products
-                .OrderByDescending(p => p.Price)
-                .Take(3)
-                .Select(p => new { p.Name, p.Price });
+            var results = products.Sum(e => e.Price);
 
-            products[2] = new Product { Name = "Stadium", Price = 79600M };
-
-			// create the result
-			StringBuilder result = new StringBuilder();
-            foreach (var p in foundProducts)
-			{
-                result.AppendFormat($"Price: {p.Price:C} ");
-			}
-
-            return View("Result", (object)result.ToString());
+            return View("Result", (object) $"Sum: {results:C}");
         }
     }
 }
