@@ -10,17 +10,17 @@ namespace LanguageFeatures.Controllers
             return "Navigate to a URL to show an example";
         }
 
-        public ViewResult AutoProperty()
+        public ViewResult CreateProduct()
 		{
             // createa new Product object
-            Product myProduct = new Product();
-
-            // set the property values
-            myProduct.ProductID = 100;
-            myProduct.Name = "Kayak";
-            myProduct.Description = "A boat for one person";
-            myProduct.Price = 275M;
-            myProduct.Category = "Watersports";
+            Product myProduct = new Product()
+            {
+                ProductID = 100,
+                Name = "Kayak",
+                Description = "A boat for one person",
+                Price = 275M,
+                Category = "Watersports"
+            };
 
             // generate the view
             return View("Result", (object) $"Category: {myProduct.Category}");
