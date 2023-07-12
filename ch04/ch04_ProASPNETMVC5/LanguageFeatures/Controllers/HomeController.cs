@@ -15,14 +15,15 @@ namespace LanguageFeatures.Controllers
             // createa new Product object
             Product myProduct = new Product();
 
-            // set the property value
+            // set the property values
+            myProduct.ProductID = 100;
             myProduct.Name = "Kayak";
-
-            // get the property
-            string productName = myProduct.Name;
+            myProduct.Description = "A boat for one person";
+            myProduct.Price = 275M;
+            myProduct.Category = "Watersports";
 
             // generate the view
-            return View("Result", (object) $"Product Name: {productName}");
+            return View("Result", (object) $"Category: {myProduct.Category}");
 		}
     }
 }
