@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Web.Mvc;
 using LanguageFeatures.Models;
@@ -143,19 +144,24 @@ namespace LanguageFeatures.Controllers
                 new Product { Name = "Corner flag", Category = "Soccer", Price = 34.95M }
             };
 
-            // define the array to hold the results
-            Product[] foundProducts = new Product[3];
-            // sort the contents of the array
-            Array.Sort(products, (item1, item2) => {
-                return Comparer<decimal>.Default.Compare(item1.Price, item2.Price);
-            });
+            //var foundProducts = products.ToList().OrderByDescending(p => p.Price).Select(p => new { p.Name, p.Price });
+            var foundProducts = from match in products
+                                orderby match.Price descending
+                                select new { match.Name, match.Price };
 
-            // get the first three items in the array as the results
-            Array.Copy(products, foundProducts, 3);
+            //// define the array to hold the results
+            //Product[] foundProducts = new Product[3];
+            //// sort the contents of the array
+            //Array.Sort(products, (item1, item2) => {
+            //    return Comparer<decimal>.Default.Compare(item1.Price, item2.Price);
+            //});
+
+            //// get the first three items in the array as the results
+            //Array.Copy(products, foundProducts, 3);
 
             // create the result
             StringBuilder result = new StringBuilder();
-            foreach (Product p in foundProducts)
+            foreach (var p in foundProducts)
 			{
                 result.AppendFormat($"Price: {p.Price:C} ");
 			}
