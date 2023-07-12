@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using LanguageFeatures.Models;
 
@@ -103,9 +104,15 @@ namespace LanguageFeatures.Controllers
                 }
             };
 
+            Func<Product, bool> categoryFilter = delegate (Product prod)
+            {
+                return prod.Category == "Soccer";
+            };
+
             decimal total = 0;
-            foreach (Product prod in products.FilterByCategory("Soccer"))
-			{
+            foreach (Product prod in products.Filter(categoryFilter))
+
+            {
                 total += prod.Price;
 			}
 
