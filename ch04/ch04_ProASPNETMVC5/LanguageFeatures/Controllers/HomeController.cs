@@ -149,6 +149,8 @@ namespace LanguageFeatures.Controllers
                 .Take(3)
                 .Select(p => new { p.Name, p.Price });
 
+            products[2] = new Product { Name = "Stadium", Price = 79600M };
+
 			// create the result
 			StringBuilder result = new StringBuilder();
             foreach (var p in foundProducts)
