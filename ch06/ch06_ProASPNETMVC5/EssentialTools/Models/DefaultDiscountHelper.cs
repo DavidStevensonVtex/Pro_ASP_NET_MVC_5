@@ -5,7 +5,7 @@
 		public decimal DiscountSize { get; set; }
 		public decimal ApplyDiscount(decimal totalParam)
 		{
-			return (totalParam - (DiscountSize * totalParam));
+			return (totalParam - (DiscountSize / 100m * totalParam));
 		}
 	}
 }
