@@ -1,13 +1,9 @@
-﻿using EssentialTools.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using EssentialTools.Models;
 
 namespace EssentialTools.Controllers
 {
-    public class HomeController : Controller
+	public class HomeController : Controller
     {
         private Product[] products =
         {
@@ -19,7 +15,7 @@ namespace EssentialTools.Controllers
 
         public ActionResult Index()
         {
-            LinqValueCalculator calc = new LinqValueCalculator();
+            IValueCalculator calc = new LinqValueCalculator();
             ShoppingCart cart = new ShoppingCart(calc) { Products = products };
             decimal totalValue = cart.CalculateProductTotal();
 
