@@ -23,7 +23,7 @@ namespace EssentialTools.Controllers
             ShoppingCart cart = new ShoppingCart(calc) { Products = products };
             decimal totalValue = cart.CalculateProductTotal();
 
-            return View();
+            return View(totalValue);
         }
     }
 }
