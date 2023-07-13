@@ -1,6 +1,6 @@
 ﻿namespace EssentialTools.Models
 {
-	public class Discount : IDiscountHelper
+	public class DefaultDiscountHelper : IDiscountHelper
 	{
 		public decimal ApplyDiscount(decimal totalParam)
 		{
