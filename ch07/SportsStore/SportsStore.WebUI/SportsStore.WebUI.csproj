@@ -110,6 +110,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\lib\bootstrap\js\npm.js" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -128,6 +136,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
+    <Content Include="libman.json" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="packages.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -141,7 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SportsStore.Domain\SportsStore.Domain.csproj">
