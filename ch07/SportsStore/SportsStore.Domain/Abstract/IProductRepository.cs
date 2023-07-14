@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using SportsStore.Domain.Entities;
 
 namespace SportsStore.Domain.Abstract
 {
 	public interface IProductRepository
 	{
-		IEnumerable<Product> Products { get; }
+		IQueryable<Product> Products { get; }
 	}
 }
