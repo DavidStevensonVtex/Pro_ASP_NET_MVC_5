@@ -38,6 +38,8 @@ namespace SportsStore.WebUI.Infrastructure
 				new Product { Name = "Surf board", Price = 179 },
 				new Product { Name = "Running shoes", Price = 95 }
 			});
+
+			kernel.Bind<IProductRepository>().ToConstant(mock.Object);
 		}
 	}
 }
