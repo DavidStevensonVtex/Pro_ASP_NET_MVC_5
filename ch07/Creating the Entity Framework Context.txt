@@ -1,0 +1,2 @@
+Install-Package EntityFramework -projectname SportsStore.Domain
+Install-Package EntityFramework -projectname SportsStore.WebUI
