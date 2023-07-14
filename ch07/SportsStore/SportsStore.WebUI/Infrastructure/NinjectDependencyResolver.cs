@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
-using EssentialTools.Models;
 using Ninject;
-using Ninject.Web.Common;
 
-namespace EssentialTools.Infrastructure
+namespace SportsStore.WebUI.Infrastructure
 {
 	public class NinjectDependencyResolver : IDependencyResolver
 	{
