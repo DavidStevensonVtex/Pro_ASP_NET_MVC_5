@@ -1,10 +1,15 @@
 ﻿@model SportsStore.Domain.Entities.Cart
 
 <div class="navbar-right">
-	<div class="navbar-right" style="margin-right: 0.25in ;">
+	<div class="navbar-right hidden-xs" style="margin-right: 0.25in ;">
 		@Html.ActionLink("Checkout", "Index", "Cart",
 			new { returnUrl = Request.Url.PathAndQuery },
 			new { @class = "btn btn-default navbar-btn" })
+	</div>
+	<div class="navbar-right visible-xs" style="margin-right: 0.25in ;">
+		<a href='/Cart/Index?returnUrl=@Request.Url.PathAndQuery' class="btn btn-default navbar-btn">
+			<span class="glyphicon glyphicon-shopping-cart"></span>
+		</a>
 	</div>
 	<div class="navbar-text navbar-right" style="padding-right: 0.1in;">
 		<b>Your cart:</b>
