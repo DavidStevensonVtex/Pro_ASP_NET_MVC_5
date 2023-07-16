@@ -7,7 +7,7 @@
 			new { @class = "btn btn-default navbar-btn" })
 	</div>
 	<div class="navbar-right visible-xs" style="margin-right: 0.25in ;">
-		<a href='/Cart/Index?returnUrl=@Request.Url.PathAndQuery' class="btn btn-default navbar-btn">
+		<a href=@Url.Action("Index", "Cart", new { returnUrl = Request.Url.PathAndQuery }) class="btn btn-default navbar-btn">
 			<span class="glyphicon glyphicon-shopping-cart"></span>
 		</a>
 	</div>
