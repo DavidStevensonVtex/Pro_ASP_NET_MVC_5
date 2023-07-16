@@ -9,7 +9,7 @@
 		public string Password = "MySmtpPassword";
 		public string ServerName = "smtp.example.com";
 		public int ServerPort = 587;
-		public bool WriteAsFile = false;
+		public bool WriteAsFile = true;
 		public string FileLocation = @"d:\sports_store_emails";
 	}
 }
