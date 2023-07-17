@@ -1,0 +1,26 @@
+﻿@{ 
+	Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width" />
+	<link href="~/Content/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+	<link href="~/Content/lib/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+	<link href="~/Content/ErrorStyles.css" rel="stylesheet" />
+	<title>@ViewBag.Title</title>
+</head>
+<body>
+	<div>
+		@if (TempData["message"] != null)
+		{
+			<div class="alert alert-success">@TempData["message"]</div>
+		}
+	</div>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>
