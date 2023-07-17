@@ -31,7 +31,7 @@ namespace SportsStore.WebUI.Controllers
             if (ModelState.IsValid)
 			{
                 repository.SaveProduct(product);
-                TempData["message"] = $"{product.Name} has been saved"];
+                TempData["message"] = $"{product.Name} has been saved";
                 return RedirectToAction("Index");
 			}
             else
