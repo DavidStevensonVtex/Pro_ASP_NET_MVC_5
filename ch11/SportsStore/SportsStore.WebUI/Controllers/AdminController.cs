@@ -13,7 +13,7 @@ namespace SportsStore.WebUI.Controllers
             repository = repo;
 		}
 
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View(repository.Products.ToList());
         }
