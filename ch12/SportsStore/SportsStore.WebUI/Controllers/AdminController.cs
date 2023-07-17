@@ -5,7 +5,8 @@ using SportsStore.Domain.Entities;
 
 namespace SportsStore.WebUI.Controllers
 {
-	public class AdminController : Controller
+    [Authorize]
+    public class AdminController : Controller
     {
         private IProductRepository repository;
 
