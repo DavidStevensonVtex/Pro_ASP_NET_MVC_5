@@ -18,7 +18,7 @@ namespace UrlsAndRoutes.Controllers
             return $"User: {user}, ID: {id}";
 		}
 
-        [Route("Users/Add/{user}/{password}")]
+        [Route("Users/Add/{user}/{password:alpha:length(6)}")]
         public string ChangePass(string user, string password)
 		{
             return $"ChangePass Method - User: {user} Password: {password}";
