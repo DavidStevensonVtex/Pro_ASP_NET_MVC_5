@@ -11,9 +11,13 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapRoute("AddControllerRoute", "Home/{action}/{id}/{*catchall}",
+                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+                new[] { "UrlsAndRoutes.AdditionalControllers" });
+
             routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new [] { "UrlsAndRoutes.AdditionalControllers" });
+                new [] { "UrlsAndRoutes.Controllers" });
         }
     }
 }
