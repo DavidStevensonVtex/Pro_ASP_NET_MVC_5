@@ -13,7 +13,7 @@ namespace UrlsAndRoutes
         {
             Route myRoute = routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new { controller = "^H.*"},
+                new { controller = "^H.*", action = "^Index$|^About$"},
                 new[] { "UrlsAndRoutes.Controllers" });
         }
     }
