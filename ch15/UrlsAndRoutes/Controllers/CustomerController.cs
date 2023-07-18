@@ -11,6 +11,12 @@ namespace UrlsAndRoutes.Controllers
             ViewBag.Action = "Index";
             return View("ActionName");
         }
+
+        [Route("Users/Add/{user}/{id}")]
+        public string Create(string user, int id)
+		{
+            return $"User: {user}, ID: {id}";
+		}
         
         public ActionResult List()
 		{
