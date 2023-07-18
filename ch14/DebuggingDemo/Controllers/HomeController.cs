@@ -11,7 +11,7 @@ namespace DebuggingDemo.Controllers
 		public ActionResult Index()
 		{
 			int firstVal = 10;
-			int secondVal = 0;
+			int secondVal = 5;
 			int result = firstVal / secondVal;
 
 			ViewBag.Message = "Welcome to ASP.NET MVC!";
