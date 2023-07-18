@@ -92,6 +92,7 @@ namespace UrlsAndRoutes.Tests
 			TestRouteMatch("~/Customer", "Customer", "Index");
 			TestRouteMatch("~/Customer/List", "Customer", "List");
 			TestRouteFail("~/Customer/List/All");
+			TestRouteMatch("~/Shop/Index", "Home", "Index");
 		}
 	}
 }
