@@ -13,25 +13,11 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapMvcAttributeRoutes();
 
-            routes.MapRoute("ChromeRoute", "{*catchall}",
-                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                 new { customConstraint = new UserAgentConstraint("Chrome") },
-                 new[] { "UrlsAndRoutes.AdditionalControllers" });
-
-            Route myRoute = routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new { 
-                    controller = "^H.*", 
-                    action = "^Index$|^About$", 
-                    httpMethod = new HttpMethodConstraint("GET"), 
-                    id = new CompoundRouteConstraint( new IRouteConstraint[]
-					{
-                        new AlphaRouteConstraint(),
-                        new MinLengthRouteConstraint(6)
-					})
-                },
-                new[] { "UrlsAndRoutes.Controllers" });
+            routes.MapRoute("Default", "{controller}/{action}/{id}",
+                new { controller = "Home", action = "index", id = UrlParameter.Optional },
+                new [] { "UrlsAndRoutes.Controllers" });
         }
     }
 }
