@@ -11,6 +11,9 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.MapRoute("ShopSchema", "Shop/{action}",
+                new { controller = "Home" });
+
             routes.MapRoute("", "X{controller}/{action}");
 
             routes.MapRoute("", "Public/{controller}/{action}",
