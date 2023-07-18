@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Mvc.Routing.Constraints;
 using System.Web.Routing;
 
 namespace UrlsAndRoutes
@@ -13,7 +14,12 @@ namespace UrlsAndRoutes
         {
             Route myRoute = routes.MapRoute("MyRoute", "{controller}/{action}/{id}/{*catchall}",
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                new { controller = "^H.*", action = "^Index$|^About$", httpMethod = new HttpMethodConstraint("GET") },
+                new { 
+                    controller = "^H.*", 
+                    action = "^Index$|^About$", 
+                    httpMethod = new HttpMethodConstraint("GET"), 
+                    id = new RangeRouteConstraint(10, 20)
+                },
                 new[] { "UrlsAndRoutes.Controllers" });
         }
     }
