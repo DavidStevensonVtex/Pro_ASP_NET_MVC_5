@@ -19,7 +19,8 @@ namespace UrlsAndRoutes.Controllers
 		{
             ViewBag.Controller = "Home";
             ViewBag.Action = "CustomVariable";
-            ViewBag.CustomVariable = id;
+            // ?? is the null coalescing opeator
+            ViewBag.CustomVariable = id ?? "<no value>" ;
             return View();
         }
     }
