@@ -16,7 +16,7 @@ namespace DebuggingDemo.Controllers
 
 			ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-			return View();
+			return View(result);
 		}
 	}
 }
