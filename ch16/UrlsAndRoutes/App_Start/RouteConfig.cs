@@ -15,9 +15,12 @@ namespace UrlsAndRoutes
         {
             routes.MapMvcAttributeRoutes();
 
-            routes.MapRoute("Default", "{controller}/{action}/{id}",
-                new { controller = "Home", action = "index", id = UrlParameter.Optional },
-                new [] { "UrlsAndRoutes.Controllers" });
+            routes.MapRoute("MyRoute", "{controller}/{action}/{id}",
+                new { 
+                    controller = "Home", 
+                    action = "Index", 
+                    id = UrlParameter.Optional 
+                });
         }
     }
 }
