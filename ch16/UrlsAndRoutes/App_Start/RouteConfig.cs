@@ -12,6 +12,9 @@ namespace UrlsAndRoutes
 
             routes.MapMvcAttributeRoutes();
 
+            routes.MapRoute("DiskFile", "Content/StaticContent.html",
+                new { controller = "Customer", action = "List" });
+
             routes.Add(new Route("SayHello", new CustomRouteHandler()));
 
             routes.Add(new LegacyRoute(
