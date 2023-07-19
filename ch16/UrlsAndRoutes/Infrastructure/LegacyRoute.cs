@@ -25,7 +25,7 @@ namespace UrlsAndRoutes.Infrastructure
 			{
 				result = new RouteData(this, new MvcRouteHandler());
 				result.Values.Add("controller", "Legacy");
-				result.Values.Add("acxtion", "GetLegacyURL");
+				result.Values.Add("action", "GetLegacyURL");
 				result.Values.Add("legacyURL", requestedURL);
 			}
 
