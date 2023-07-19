@@ -118,6 +118,7 @@
     <None Include="packages.config" />
     <Content Include="Views\Shared\ActionName.cshtml" />
     <Content Include="Views\Shared\CustomVariable.cshtml" />
+    <Content Include="Views\Legacy\GetLegacyURL.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -131,7 +132,6 @@
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Customer\" />
     <Folder Include="Views\Home\" />
-    <Folder Include="Views\Legacy\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
