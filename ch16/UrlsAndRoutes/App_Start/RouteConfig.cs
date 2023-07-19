@@ -8,6 +8,8 @@ namespace UrlsAndRoutes
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            routes.RouteExistingFiles = true;
+
             routes.MapMvcAttributeRoutes();
 
             routes.Add(new Route("SayHello", new CustomRouteHandler()));
