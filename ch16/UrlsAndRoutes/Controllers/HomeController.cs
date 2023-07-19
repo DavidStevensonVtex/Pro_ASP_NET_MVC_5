@@ -23,12 +23,9 @@ namespace UrlsAndRoutes.Controllers
             return View();
         }
 
-        public ViewResult MyActionMethod()
+        public RedirectToRouteResult MyActionMethod()
 		{
-            string myActionUrl = Url.Action("Index", new { id = "MyID" });
-            string myRouteUrl = Url.RouteUrl(new { controller = "Home", action = "Index" });
-            // ... do something with URLs...
-            return View();
+            return RedirectToAction("Index");
 		}
     }
 }
