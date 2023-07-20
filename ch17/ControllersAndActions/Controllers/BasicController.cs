@@ -10,7 +10,15 @@ namespace ControllersAndActions.Controllers
 			string controller = (string)requestContext.RouteData.Values["controller"];
 			string action = (string)requestContext.RouteData.Values["action"];
 
-			requestContext.HttpContext.Response.Write($"Controller: {controller} Action: {action}");
+			if (action.ToLower() == "redirect")
+			{
+				requestContext.HttpContext.Response.Redirect("/Derived/Index");
+			}
+			else
+			{
+				requestContext.HttpContext.Response.Write($"Controller: {controller} Action: {action}");
+			}
+
 		}
 	}
 }
