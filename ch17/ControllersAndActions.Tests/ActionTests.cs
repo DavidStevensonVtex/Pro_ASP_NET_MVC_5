@@ -19,6 +19,7 @@ namespace ControllersAndActions.Tests
 
 			// Assert - check the result
 			Assert.AreEqual("", result.ViewName);
+			Assert.AreEqual("Hello", result.ViewBag.Message);
 		}
 
 		[TestMethod]
