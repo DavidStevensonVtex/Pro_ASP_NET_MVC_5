@@ -8,7 +8,7 @@ namespace ControllersAndActions.Controllers
 {
     public class ExampleController : Controller
     {
-        public ActionResult Index()
+        public ViewResult Index()
         {
             return View("Homepage");
         }
