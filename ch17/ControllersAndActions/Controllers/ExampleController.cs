@@ -10,7 +10,7 @@ namespace ControllersAndActions.Controllers
     {
         public ViewResult Index()
         {
-            return View("Homepage");
+            return View();
         }
     }
 }
