@@ -14,7 +14,7 @@ namespace ControllersAndActions.Controllers
 
         public RedirectResult Redirect()
 		{
-            return Redirect("/Example/Index");
+            return RedirectPermanent("/Example/Index");
 		}
     }
 }
