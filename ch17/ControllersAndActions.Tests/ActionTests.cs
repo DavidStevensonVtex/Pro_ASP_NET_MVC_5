@@ -15,11 +15,11 @@ namespace ControllersAndActions.Tests
 			ExampleController target = new ExampleController();
 
 			// Act - call the action method
-			ViewResult result = target.Index();
+			RedirectResult result = target.Redirect();
 
 			// Assert - check the result
-			Assert.AreEqual("", result.ViewName);
-			Assert.AreEqual("Hello", result.ViewBag.Message);
+			Assert.IsTrue(result.Permanent);
+			Assert.AreEqual("/Example/Index", result.Url);
 		}
 
 		[TestMethod]
@@ -33,7 +33,8 @@ namespace ControllersAndActions.Tests
 
 			// Assert - check the result
 			Assert.AreEqual("", result.ViewName);
-			Assert.IsInstanceOfType(result.ViewData.Model, typeof(System.DateTime));
+			Assert.AreEqual("Hello", result.ViewBag.Message);
+			Assert.IsInstanceOfType(result.ViewBag.Date, typeof(System.DateTime));
 		}
 	}
 }
