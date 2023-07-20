@@ -17,7 +17,7 @@ namespace ControllersAndActions.Controllers
 
         public ActionResult ProduceOutput()
 		{
-            return new RedirectResult("/Basic/Index");
+            return Redirect("/Basic/Index");
 		}
     }
 }
