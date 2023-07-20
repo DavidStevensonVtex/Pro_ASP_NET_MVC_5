@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControllersAndActions.Infrastructure;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,15 +15,16 @@ namespace ControllersAndActions.Controllers
             return View("MyView");
         }
 
-        public void ProduceOutput()
+        public ActionResult ProduceOutput()
 		{
-            if (Server.MachineName == "TINY")
+            if (Server.MachineName == "DSTEVENSONWIN10")
 			{
-                Response.Redirect("/Basic/Index");
+                return new CustomRedirectResult { Url = "/Basic/Index" };
 			}
             else
 			{
                 Response.Write("Controller: Derived, Action: ProduceOutput");
+                return null;
 			}
 		}
     }
