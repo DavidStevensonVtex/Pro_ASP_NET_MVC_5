@@ -12,9 +12,15 @@ namespace ControllersAndActions.Controllers
             return View();
         }
 
-        public RedirectResult Redirect()
+        public RedirectToRouteResult Redirect2()
 		{
-            return RedirectPermanent("/Example/Index");
+            return RedirectToRoute(
+                new
+                {
+                    controller = "Example",
+                    action = "Index",
+                    ID = "MyID"
+                });
 		}
     }
 }
