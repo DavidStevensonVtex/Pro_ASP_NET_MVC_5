@@ -7,17 +7,19 @@ namespace ControllersAndActions.Controllers
     {
         public ViewResult Index()
         {
-            ViewBag.Message = TempData["Message"];
-            ViewBag.Date = TempData["Date"];
+            TempData["Message"] = "Hello";
+            TempData["Date"] = DateTime.Now;
             return View();
         }
 
         public RedirectToRouteResult Redirect2()
 		{
-            // Preserving Data Across a Redirection
-            TempData["Message"] = "Hello";
-            TempData["Date"] = DateTime.Now;
             return RedirectToAction("Index");
+		}
+
+        public HttpStatusCodeResult StatusCode()
+		{
+            return new HttpStatusCodeResult(404, "URL cannot be serviced");
 		}
     }
 }
