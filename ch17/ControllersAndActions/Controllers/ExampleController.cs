@@ -14,13 +14,7 @@ namespace ControllersAndActions.Controllers
 
         public RedirectToRouteResult Redirect2()
 		{
-            return RedirectToRoute(
-                new
-                {
-                    controller = "Example",
-                    action = "Index",
-                    ID = "MyID"
-                });
+            return RedirectToAction("Index");
 		}
     }
 }
