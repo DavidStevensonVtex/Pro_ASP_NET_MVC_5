@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
 using System.Web.Routing;
+using System.Web.Security;
 
 namespace Filters.Infrastructure
 {
@@ -27,6 +28,10 @@ namespace Filters.Infrastructure
 						{ "action", "Login" },
 						{ "returnUrl", context.HttpContext.Request.RawUrl }
 					});
+			}
+			else
+			{
+				FormsAuthentication.SignOut();
 			}
 		}
 	}
