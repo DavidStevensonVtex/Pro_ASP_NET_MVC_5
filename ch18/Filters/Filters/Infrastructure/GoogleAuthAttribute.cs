@@ -5,14 +5,19 @@ using System.Web;
 using System.Web.Routing;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
+using System.Security.Principal;
 
 namespace Filters.Infrastructure
 {
 	public class GoogleAuthAttribute : FilterAttribute, IAuthenticationFilter
 	{
-		public void OnAuthentication(AuthenticationContext filterContext)
+		public void OnAuthentication(AuthenticationContext context)
 		{
-			// not implemented
+			IIdentity ident = context.Principal.Identity;
+			if (! ident.IsAuthenticated || ! ident.Name.EndsWith("@google.com"))
+			{
+				context.Result = new HttpUnauthorizedResult();
+			}
 		}
 
 		public void OnAuthenticationChallenge(AuthenticationChallengeContext context)
