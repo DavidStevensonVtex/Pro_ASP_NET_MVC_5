@@ -12,6 +12,7 @@ namespace Filters.Controllers
         }
 
         [GoogleAuth]
+        [Authorize(Users = "bob@google.com")]
         public string List()
 		{
             return "This is the List action on the Home controller";
