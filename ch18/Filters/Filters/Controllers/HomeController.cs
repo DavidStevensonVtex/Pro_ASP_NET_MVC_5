@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Web.Mvc;
 using Filters.Infrastructure;
 
@@ -6,6 +7,8 @@ namespace Filters.Controllers
 {
 	public class HomeController : Controller
     {
+        private Stopwatch timer;
+
         [Authorize(Users = "admin")]
         public string Index()
         {
@@ -32,12 +35,21 @@ namespace Filters.Controllers
 			}
 		}
 
-        [ProfileAction]
-        [ProfileResult]
-        [ProfileAll]
         public string FilterTest()
 		{
             return "This is the FilterTest action";
 		}
+
+		protected override void OnActionExecuting(ActionExecutingContext filterContext)
+		{
+            timer = Stopwatch.StartNew();
+		}
+
+        protected override void OnResultExecuted (ResultExecutedContext filterContext)
+		{
+            timer.Stop();
+            filterContext.HttpContext.Response.Write(
+                $"<div>Total elapsed time: {timer.Elapsed.TotalMilliseconds:N3} milliseconds.</div>");
+        }
     }
 }
