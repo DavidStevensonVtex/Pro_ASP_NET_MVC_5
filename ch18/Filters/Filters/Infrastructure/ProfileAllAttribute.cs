@@ -5,7 +5,7 @@ namespace Filters.Infrastructure
 {
 	public class ProfileAllAttribute : ActionFilterAttribute
 	{
-		private Stopwatch timer;
+		private Stopwatch timer = Stopwatch.StartNew();
 
 		public override void OnActionExecuting ( ActionExecutingContext filterContext)
 		{
