@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Routing;
+﻿using System.Security.Principal;
 using System.Web.Mvc;
 using System.Web.Mvc.Filters;
-using System.Security.Principal;
+using System.Web.Routing;
 
 namespace Filters.Infrastructure
 {
@@ -22,7 +18,7 @@ namespace Filters.Infrastructure
 
 		public void OnAuthenticationChallenge(AuthenticationChallengeContext context)
 		{
-			if (context.Result == null) 
+			if ((context.Result == null) || (context.Result is HttpUnauthorizedResult))
 			{
 				context.Result = new RedirectToRouteResult(
 					new RouteValueDictionary

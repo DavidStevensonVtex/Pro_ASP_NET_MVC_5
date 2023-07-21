@@ -10,5 +10,11 @@ namespace Filters.Controllers
         {
             return "This is the Index action on the Home controller";
         }
+
+        [GoogleAuth]
+        public string List()
+		{
+            return "This is the List action on the Home controller";
+		}
     }
 }
