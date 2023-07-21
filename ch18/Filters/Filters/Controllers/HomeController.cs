@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System;
+using System.Web.Mvc;
 using Filters.Infrastructure;
 
 namespace Filters.Controllers
@@ -16,6 +17,18 @@ namespace Filters.Controllers
         public string List()
 		{
             return "This is the List action on the Home controller";
+		}
+
+        public string RangeTest(int id)
+		{
+            if ( id > 100 )
+			{
+                return $"The id value is {id}";
+			}
+            else
+			{
+                throw new ArgumentOutOfRangeException("id", id, "");
+			}
 		}
     }
 }
