@@ -16,7 +16,7 @@ namespace Filters.Infrastructure
 			timer.Stop();
 
 			filterContext.HttpContext.Response.Write(
-				$"<div>Action method elapsed time: {timer.Elapsed.TotalMilliseconds:N3} milliseconds.</div>");
+				$"<div>Result elapsed time: {timer.Elapsed.TotalMilliseconds:N3} milliseconds.</div>");
 		}
 	}
 }

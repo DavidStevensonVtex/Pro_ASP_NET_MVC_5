@@ -33,6 +33,7 @@ namespace Filters.Controllers
 		}
 
         [ProfileAction]
+        [ProfileResult]
         public string FilterTest()
 		{
             return "This is the FilterTest action";
