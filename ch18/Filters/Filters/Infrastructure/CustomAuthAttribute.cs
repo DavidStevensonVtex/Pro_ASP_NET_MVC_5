@@ -7,7 +7,7 @@ namespace Filters.Infrastructure
 	{
 		private bool localAllowed;
 
-		public CustomAuthAttriute(bool allowedParam)
+		public CustomAuthAttribute(bool allowedParam)
 		{
 			localAllowed = allowedParam;
 		}
