@@ -1,9 +1,4 @@
-﻿@model int 
-
-@{ 
-	var count = 0;
-	var number = Model / count;
-}
+﻿@model HandleErrorInfo 
 
 <!DOCTYPE html>
 
@@ -14,9 +9,9 @@
 </head>
 <body>
     <h2>Sorry</h2>
-    <span>The value @Model was out of the expected range.</span>
-    <div>
-        @Html.ActionLink("Change value and try again", "Index")
-    </div>
+    <span>
+        The value @(((ArgumentOutOfRangeException)Model.Exception).ActualValue) 
+        was out of the expected range.
+    </span>
 </body>
 </html>
