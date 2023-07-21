@@ -18,7 +18,7 @@ namespace Filters.Infrastructure
 			if (filterContext.Exception == null)
 			{
 				filterContext.HttpContext.Response.Write(
-					$"<div>Action method elapsed time: {timer.Elapsed.TotalSeconds:F6}</div>");
+					$"<div>Action method elapsed time: {timer.Elapsed.TotalSeconds:F6} seconds.</div>");
 			}
 		}
 	}
