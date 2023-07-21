@@ -19,6 +19,7 @@ namespace Filters.Controllers
             return "This is the List action on the Home controller";
 		}
 
+        [RangeException]
         public string RangeTest(int id)
 		{
             if ( id > 100 )
