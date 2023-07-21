@@ -34,6 +34,7 @@ namespace Filters.Controllers
 
         [ProfileAction]
         [ProfileResult]
+        [ProfileAll]
         public string FilterTest()
 		{
             return "This is the FilterTest action";
