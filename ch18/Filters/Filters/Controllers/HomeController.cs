@@ -32,7 +32,7 @@ namespace Filters.Controllers
 			}
 		}
 
-        [CustomAction]
+        [ProfileAction]
         public string FilterTest()
 		{
             return "This is the FilterTest action";
