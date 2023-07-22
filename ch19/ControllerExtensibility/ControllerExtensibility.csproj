@@ -98,6 +98,7 @@
     <Compile Include="Controllers\FastController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\RemoteDataController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -126,6 +127,7 @@
     <Folder Include="Views\Fast\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Product\" />
+    <Folder Include="Views\RemoteData\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
