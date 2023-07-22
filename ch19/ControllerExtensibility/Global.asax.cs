@@ -1,5 +1,6 @@
 using System.Web.Mvc;
 using System.Web.Routing;
+using ControllerExtensibility.Infrastructure;
 
 namespace ControllerExtensibility
 {
@@ -10,8 +11,8 @@ namespace ControllerExtensibility
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            ControllerBuilder.Current.DefaultNamespaces.Add("MyControllerNamespace");
-            ControllerBuilder.Current.DefaultNamespaces.Add("MyProject.*");
+            ControllerBuilder.Current.SetControllerFactory(
+                new DefaultControllerFactory(new CustomControllerActivator()));
 
         }
     }
