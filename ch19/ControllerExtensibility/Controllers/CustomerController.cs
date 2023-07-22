@@ -14,6 +14,7 @@ namespace ControllerExtensibility.Controllers
             });
         }
 
+        [ActionName("Enumerate")]
         public ActionResult List()
         {
             return View("Result", new Result
