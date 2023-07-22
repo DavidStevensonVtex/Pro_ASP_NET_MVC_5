@@ -114,6 +114,7 @@
     <Content Include="Views\web.config" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\Result.cshtml" />
+    <Content Include="Views\RemoteData\Data.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,7 +129,6 @@
     <Folder Include="Views\Fast\" />
     <Folder Include="Views\Home\" />
     <Folder Include="Views\Product\" />
-    <Folder Include="Views\RemoteData\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
