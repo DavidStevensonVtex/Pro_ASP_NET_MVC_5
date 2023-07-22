@@ -12,5 +12,11 @@ namespace ControllerExtensibility.Controllers
             string data = await Task<string>.Factory.StartNew(() => new RemoteService().GetRemoteData());
             return View((object)data);
 		}
+
+        public async Task<ActionResult> ConsumeAsyncMethod()
+		{
+            string data = await new RemoteService().GetRemoteDataAsync();
+            return View("Data", (object)data);
+		}
     }
 }
