@@ -9,7 +9,7 @@ namespace HelperMethods.Controllers
             ViewBag.Fruits = new string[] { "Apple", "Orange", "Pear" };
             ViewBag.Cities = new string[] { "New York", "London", "Paris" };
             string message = "This is an HTML elment: <input>";
-            return View(message);
+            return View((object) message);
         }
     }
 }
