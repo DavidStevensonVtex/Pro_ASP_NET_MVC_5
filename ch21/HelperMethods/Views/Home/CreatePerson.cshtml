@@ -6,7 +6,8 @@
 
 <h2>CreatePerson</h2>
 
-@{ Html.BeginForm();}
+@using (Html.BeginForm())
+{
 	<div class="dataElem">
 		<label>PersonId</label>
 		<input name="personId" value="@Model.PersonId" />
@@ -20,4 +21,4 @@
 		<input name="lastName" value="@Model.LastName" />
 	</div>
 	<input type="submit" value="Submit" />
-@{ Html.EndForm(); }
+}
