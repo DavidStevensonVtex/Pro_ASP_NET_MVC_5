@@ -4,6 +4,14 @@
     Layout = null;
 }
 
+@helper ListArrayItems(string[] items) 
+{ 
+    foreach ( string str in items)
+	{
+        <b>@str</b>
+	}
+}
+
 <!DOCTYPE html>
 
 <html>
@@ -13,19 +21,11 @@
 </head>
 <body>
     <div> 
-        Here are the fruits:
-        @foreach ( string str in (string[])ViewBag.Fruits)
-		{
-            <b>@str</b>
-		}
+        Here are the fruits: @ListArrayItems(ViewBag.Fruits)
     </div>
-    <div>
-        Here are the cities:
-        @foreach ( string str in (string[])ViewBag.Cities)
-		{
-            <b>@str</b>
-		}
-    </div>
+	<div>
+		Here are the cities: @ListArrayItems(ViewBag.Cities)
+	</div>
     <div>
         Here is the message:
         <p>@Model</p>
