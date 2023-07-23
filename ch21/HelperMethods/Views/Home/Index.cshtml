@@ -6,10 +6,12 @@
 
 @helper ListArrayItems(string[] items) 
 { 
-    foreach ( string str in items)
+    <ul>
+	@foreach ( string str in items)
 	{
-        <b>@str</b>
+	    <li>@str</li>
 	}
+    </ul>
 }
 
 <!DOCTYPE html>
