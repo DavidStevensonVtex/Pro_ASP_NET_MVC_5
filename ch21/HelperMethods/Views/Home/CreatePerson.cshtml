@@ -21,5 +21,9 @@
 		<label>Last Name</label>
 		@Html.TextBoxFor(m => m.LastName)
 	</div>
+	<div class="dataElem">
+		<label>Role</label>
+		@Html.DropDownListFor(m => m.Role, new SelectList(Enum.GetNames(typeof(HelperMethods.Models.Role))))
+	</div>
 	<input type="submit" value="Submit" />
 }
