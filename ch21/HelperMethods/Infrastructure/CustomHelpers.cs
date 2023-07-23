@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Web.Mvc;
 using System.Xml.Linq;
 
@@ -13,6 +14,12 @@ namespace HelperMethods.Infrastructure
 			);
 
 			return new MvcHtmlString(ul.ToString());
+		}
+
+		public static MvcHtmlString DisplayMessage ( this HtmlHelper html, string msg )
+		{
+			string result = $"This is the message: <p>{msg}</p>";
+			return new MvcHtmlString(result);
 		}
 	}
 }
