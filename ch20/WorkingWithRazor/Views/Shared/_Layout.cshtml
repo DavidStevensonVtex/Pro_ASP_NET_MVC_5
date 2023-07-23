@@ -22,7 +22,10 @@
         This is part of the layout
     </div>
 
+@if (IsSectionDefined("Footer"))
+{
     @RenderSection("Footer")
+}
 
     <div class="layout">
 	    This is part of the layout
