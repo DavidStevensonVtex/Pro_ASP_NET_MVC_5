@@ -1,4 +1,4 @@
-﻿@model Person
+﻿@model HelperMethods.Models.Person
 
 @{
 	ViewBag.Title = "CreatePerson";
@@ -11,15 +11,15 @@
 {
 	<div class="dataElem">
 		<label>PersonId</label>
-		@Html.TextBox("PersonId")
+		@Html.TextBoxFor(m => m.PersonId)
 	</div>
 	<div class="dataElem">
 		<label>First Name</label>
-		@Html.TextBox("FirstName")
+		@Html.TextBoxFor(m => m.FirstName)
 	</div>
 	<div class="dataElem">
 		<label>Last Name</label>
-		@Html.TextBox("LastName")
+		@Html.TextBoxFor(m => m.LastName)
 	</div>
 	<input type="submit" value="Submit" />
 }
