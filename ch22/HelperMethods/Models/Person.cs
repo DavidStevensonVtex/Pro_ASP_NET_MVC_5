@@ -12,6 +12,7 @@ namespace HelperMethods.Models
 		public int PersonId { get; set; }
 
 		[Display(Name = "First")]
+		[UIHint("MultilineText")]
 		public string FirstName { get; set; }
 
 		[Display(Name = "Last")]
