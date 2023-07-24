@@ -18,6 +18,7 @@ namespace HelperMethods.Models
 		public string LastName { get; set; }
 
 		[Display(Name = "Birth Date")]
+		[DataType(DataType.Date)]
 		public DateTime BirthDate { get; set; }
 
 		public Address HomeAddress { get; set; }
