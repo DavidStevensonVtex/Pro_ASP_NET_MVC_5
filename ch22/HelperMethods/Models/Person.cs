@@ -5,7 +5,7 @@ namespace HelperMethods.Models
 {
 	public class Person
 	{
-		[HiddenInput]
+		[HiddenInput(DisplayValue=false)]
 		public int PersonId { get; set; }
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
