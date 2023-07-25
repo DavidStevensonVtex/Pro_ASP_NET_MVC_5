@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -19,23 +20,23 @@ namespace HelperMethods.Models
             return View();
         }
 
-        public ActionResult GetPeople()
+        public PartialViewResult GetPeopleData(string selectedRole = "All")
 		{
-            return View(personData);
+            IEnumerable<Person> data = personData;
+
+            if ( selectedRole != "All")
+			{
+                Role selected = (Role)Enum.Parse(typeof(Role), selectedRole);
+                data = personData.Where(p => p.Role == selected);
+			}
+
+            return PartialView(data);
 		}
 
         [HttpPost]
-        public ActionResult GetPeople(string selectedRole)
+        public ActionResult GetPeople(string selectedRole = "All")
 		{
-            if (selectedRole == null || selectedRole == "All" )
-			{
-                return View(personData);
-			}
-            else
-			{
-                Role selected = (Role)Enum.Parse(typeof(Role), selectedRole);
-                return View(personData.Where(p => p.Role == selected));
-			}
+            return View(selectedRole);
 		}
     }
 }
