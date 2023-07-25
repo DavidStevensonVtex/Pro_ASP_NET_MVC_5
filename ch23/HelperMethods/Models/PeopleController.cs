@@ -35,7 +35,8 @@ namespace HelperMethods.Models
 
         public JsonResult GetPeopleDataJson(string selectedRole = "All" )
 		{
-            IEnumerable<Person> data = GetData(selectedRole);
+            var data = GetData(selectedRole)
+                .Select(p => new { FirstName = p.FirstName, LastName = p.LastName, Role = p.Role.ToString() });
             return Json(data, JsonRequestBehavior.AllowGet);
 		}
 
