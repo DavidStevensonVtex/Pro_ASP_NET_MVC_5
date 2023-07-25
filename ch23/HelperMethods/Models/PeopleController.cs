@@ -33,10 +33,9 @@ namespace HelperMethods.Models
             return PartialView(data);
 		}
 
-        [HttpPost]
         public ActionResult GetPeople(string selectedRole = "All")
 		{
-            return View(selectedRole);
+            return View((object) selectedRole);
 		}
     }
 }

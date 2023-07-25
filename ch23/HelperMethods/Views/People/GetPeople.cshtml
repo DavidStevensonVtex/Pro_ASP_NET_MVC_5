@@ -1,5 +1,5 @@
 ﻿@using HelperMethods.Models
-@model IEnumerable<Person>
+@model string
 
 @{
     ViewBag.Title = "GetPeople";
@@ -9,14 +9,7 @@
 <table>
     <thead><tr><th>First</th><th>Last</th><th>Role</th></tr></thead>
     <tbody>
-        @foreach ( Person p in Model)
-		{
-            <tr>
-                <td>@p.FirstName</td>
-                <td>@p.LastName</td>
-                <td>@p.Role</td>
-            </tr>
-		}
+        @Html.Action("GetPeopleData", new { selectedRole = Model })
     </tbody>
 </table>
 
