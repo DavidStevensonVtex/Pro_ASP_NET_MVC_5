@@ -6,11 +6,18 @@
 	AjaxOptions ajaxOpts = new AjaxOptions
 	{
 		UpdateTargetId = "tableBody",
-        Url = Url.Action("GetPeopleData")
+        Url = Url.Action("GetPeopleData"),
+        LoadingElementId = "loading",
+        LoadingElementDuration=1000
 	};
 }
 
 <h2>Get People</h2>
+
+<div id="loading" class="load" style="display:none">
+    <p>Loading Data...</p>
+</div>
+
 <table>
     <thead><tr><th>First</th><th>Last</th><th>Role</th></tr></thead>
     <tbody id="tableBody">
