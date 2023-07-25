@@ -5,7 +5,8 @@
 	ViewBag.Title = "GetPeople";
 	AjaxOptions ajaxOpts = new AjaxOptions
 	{
-		UpdateTargetId = "tableBody"
+		UpdateTargetId = "tableBody",
+        Url = Url.Action("GetPeopleData")
 	};
 }
 
@@ -17,7 +18,7 @@
     </tbody>
 </table>
 
-@using (Ajax.BeginForm("GetPeopleData", ajaxOpts))
+@using (Ajax.BeginForm(ajaxOpts))
 {
     @Html.DropDownList("selectedRole", new SelectList( new[] { "All" }.Concat(Enum.GetNames(typeof(Role)))))
     <button type="submit">Submit</button>
