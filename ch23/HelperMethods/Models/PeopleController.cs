@@ -20,29 +20,26 @@ namespace HelperMethods.Models
             return View();
         }
 
-        private IEnumerable<Person> GetData(string selectedRole)
+        public ActionResult GetPeopleData(string selectedRole = "All")
 		{
             IEnumerable<Person> data = personData;
 
-            if (selectedRole != "All")
-            {
+            if ( selectedRole != "All" )
+			{
                 Role selected = (Role)Enum.Parse(typeof(Role), selectedRole);
                 data = personData.Where(p => p.Role == selected);
+			}
+
+            if (Request.IsAjaxRequest())
+			{
+                var formattedData = data
+                    .Select(p => new { FirstName = p.FirstName, LastName = p.LastName, Role = p.Role.ToString() });
+                return Json(formattedData, JsonRequestBehavior.AllowGet);
             }
-
-            return data;
-        }
-
-        public JsonResult GetPeopleDataJson(string selectedRole = "All" )
-		{
-            var data = GetData(selectedRole)
-                .Select(p => new { FirstName = p.FirstName, LastName = p.LastName, Role = p.Role.ToString() });
-            return Json(data, JsonRequestBehavior.AllowGet);
-		}
-
-        public PartialViewResult GetPeopleData(string selectedRole = "All")
-		{
-            return PartialView(GetData(selectedRole));
+            else
+			{
+                return PartialView(data);
+			}
 		}
 
         public ActionResult GetPeople(string selectedRole = "All")

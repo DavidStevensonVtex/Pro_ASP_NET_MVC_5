@@ -9,7 +9,7 @@
         Url = Url.Action("GetPeopleData"),
         LoadingElementId = "loading",
         LoadingElementDuration=1000,
-        Confirm = "Do you wish to request new data?"
+        OnSuccess = "processData"
 	};
 }
 
@@ -50,7 +50,7 @@
 				new AjaxOptions
 				{
 					UpdateTargetId = "tableBody",
-					Url = Url.Action("GetPeopleDataJson", new { selectedRole = "All" }),
+					Url = Url.Action("GetPeopleData", new { selectedRole = "All" }),
 					OnSuccess = "processData"
 				}
 		)
@@ -65,7 +65,7 @@
 				new AjaxOptions
 				{
 					UpdateTargetId = "tableBody",
-					Url = Url.Action("GetPeopleDataJson", new { selectedRole = role }),
+					Url = Url.Action("GetPeopleData", new { selectedRole = role }),
 					OnSuccess = "processData"
 				}
 			)
