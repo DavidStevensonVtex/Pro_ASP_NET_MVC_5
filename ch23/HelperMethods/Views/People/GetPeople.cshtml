@@ -36,7 +36,12 @@
 	<div class="ajaxLink">
 		@Ajax.ActionLink("All", "GetPeopleData",
 				new { selectedRole = "All" },
-				new AjaxOptions { UpdateTargetId = "tableBody" })
+				new AjaxOptions
+				{
+					UpdateTargetId = "tableBody",
+					Url = Url.Action("GetPeopleData", new { selectedRole = "All" })
+				}
+		)
 		&nbsp;&nbsp;
 	</div>
 
@@ -45,7 +50,12 @@
         <div class="ajaxLink">
             @Ajax.ActionLink(role, "GetPeopleData",
 				new { selectedRole = role },
-				new AjaxOptions { UpdateTargetId = "tableBody" })
+				new AjaxOptions
+				{
+					UpdateTargetId = "tableBody",
+					Url = Url.Action("GetPeopleData", new { selectedRole = role })
+				}
+			)
             &nbsp;&nbsp;
         </div>
 	}
