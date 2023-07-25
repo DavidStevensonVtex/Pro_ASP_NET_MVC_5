@@ -31,3 +31,22 @@
     @Html.DropDownList("selectedRole", new SelectList( new[] { "All" }.Concat(Enum.GetNames(typeof(Role)))))
     <button type="submit">Submit</button>
 }
+
+<div>
+	<div class="ajaxLink">
+		@Ajax.ActionLink("All", "GetPeopleData",
+				new { selectedRole = "All" },
+				new AjaxOptions { UpdateTargetId = "tableBody" })
+		&nbsp;&nbsp;
+	</div>
+
+    @foreach ( string role in Enum.GetNames(typeof(Role)))
+	{
+        <div class="ajaxLink">
+            @Ajax.ActionLink(role, "GetPeopleData",
+				new { selectedRole = role },
+				new AjaxOptions { UpdateTargetId = "tableBody" })
+            &nbsp;&nbsp;
+        </div>
+	}
+</div>
