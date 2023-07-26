@@ -6,7 +6,7 @@
 
 <h2>Create Person</h2>
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("DisplaySummary", "Home"))
 {
 	<div>@Html.LabelFor(m => m.PersonId)  @Html.EditorFor(m => m.PersonId)</div>
 	<div>@Html.LabelFor(m => m.FirstName) @Html.EditorFor(m => m.FirstName)</div>
