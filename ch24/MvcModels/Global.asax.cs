@@ -15,7 +15,7 @@ namespace MvcModels
             // This statement has been commented out.
             // ValueProviderFactories.Factories.Insert(0, new CustomValueProviderFactory());
 
-            ModelBinders.Binders.Add(typeof(AddressSummary), new AddressSummaryBinder());
+            //ModelBinders.Binders.Add(typeof(AddressSummary), new AddressSummaryBinder());
         }
     }
 }
