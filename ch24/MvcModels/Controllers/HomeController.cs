@@ -14,7 +14,7 @@ namespace MvcModels.Controllers
             new Person { PersonId = 4, FirstName = "Anne", LastName = "Jones", Role = Role.Guest }
         };
 
-        public ActionResult Index( int? id )
+        public ActionResult Index(int id = 1)
         {
             Person dataItem = personData.Where(p => p.PersonId == id).First();
             return View(dataItem);
