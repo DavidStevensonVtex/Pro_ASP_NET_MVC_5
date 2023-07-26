@@ -54,11 +54,11 @@ namespace MvcModels.Controllers
 		public ActionResult Address(FormCollection formData)
 		{
             IList<AddressSummary> addresses = new List<AddressSummary>();
-            try
+            if (TryUpdateModel(addresses, formData))
 			{
-                UpdateModel(addresses, formData);
-            }
-            catch (InvalidOperationException ex)
+                // proceed as normal
+			}
+            else
 			{
                 // Provide feedback to user.
 			}
