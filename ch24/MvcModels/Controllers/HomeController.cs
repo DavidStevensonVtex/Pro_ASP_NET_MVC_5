@@ -51,18 +51,10 @@ namespace MvcModels.Controllers
 		//	return View(addresses);
 		//}
 
-		public ActionResult Address(FormCollection formData)
+		public ActionResult Address()
 		{
             IList<AddressSummary> addresses = new List<AddressSummary>();
-            if (TryUpdateModel(addresses, formData))
-			{
-                // proceed as normal
-			}
-            else
-			{
-                // Provide feedback to user.
-			}
-
+            UpdateModel(addresses);
             return View(addresses);
 		}
     }
