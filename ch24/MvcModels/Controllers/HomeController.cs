@@ -30,5 +30,10 @@ namespace MvcModels.Controllers
 		{
             return View("Index", model);
 		}
+
+        public ActionResult DisplaySummary(AddressSummary summary)
+		{
+            return View(summary);
+		}
     }
 }
