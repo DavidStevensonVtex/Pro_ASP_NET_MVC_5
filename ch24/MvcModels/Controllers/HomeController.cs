@@ -31,7 +31,8 @@ namespace MvcModels.Controllers
             return View("Index", model);
 		}
 
-        public ActionResult DisplaySummary([Bind(Prefix = "HomeAddress")] AddressSummary summary)
+        public ActionResult DisplaySummary(
+            [Bind(Prefix = "HomeAddress", Exclude = "Country")] AddressSummary summary)
 		{
             return View(summary);
 		}
