@@ -44,16 +44,16 @@ namespace MvcModels.Controllers
             return View(names);
 		}
 
-        public ActionResult Address(IList<AddressSummary> addresses)
-		{
-            addresses = addresses ?? new List<AddressSummary>();
-            return View(addresses);
-		}
+		//public ActionResult Address(IList<AddressSummary> addresses)
+		//{
+		//	addresses = addresses ?? new List<AddressSummary>();
+		//	return View(addresses);
+		//}
 
-        public ActionResult Address()
+		public ActionResult Address(FormCollection formData)
 		{
             IList<AddressSummary> addresses = new List<AddressSummary>();
-            UpdateModel(addresses, new FormValueProvider(ControllerContext));
+            UpdateModel(addresses, formData);
             return View(addresses);
 		}
     }
