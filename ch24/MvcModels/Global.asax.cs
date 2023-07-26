@@ -1,6 +1,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using MvcModels.Infrastructure;
+using MvcModels.Models;
 
 namespace MvcModels
 {
@@ -10,7 +11,11 @@ namespace MvcModels
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            ValueProviderFactories.Factories.Insert(0, new CustomValueProviderFactory());
+
+            // This statement has been commented out.
+            // ValueProviderFactories.Factories.Insert(0, new CustomValueProviderFactory());
+
+            ModelBinders.Binders.Add(typeof(AddressSummary), new AddressSummaryBinder());
         }
     }
 }

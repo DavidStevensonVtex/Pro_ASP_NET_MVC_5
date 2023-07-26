@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MvcModels.Models;
 using System.Web.Mvc;
-using MvcModels.Models;
 
 namespace MvcModels.Infrastructure
 {
