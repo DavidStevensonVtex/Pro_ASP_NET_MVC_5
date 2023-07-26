@@ -49,5 +49,12 @@ namespace MvcModels.Controllers
             addresses = addresses ?? new List<AddressSummary>();
             return View(addresses);
 		}
+
+        public ActionResult Address()
+		{
+            IList<AddressSummary> addresses = new List<AddressSummary>();
+            UpdateModel(addresses);
+            return View(addresses);
+		}
     }
 }
