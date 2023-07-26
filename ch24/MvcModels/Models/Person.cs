@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HelperMethods.Models
+namespace MvcModels.Models
 {
 	public partial class Person
 	{
