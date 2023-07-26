@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using MvcModels.Models;
@@ -53,7 +54,15 @@ namespace MvcModels.Controllers
 		public ActionResult Address(FormCollection formData)
 		{
             IList<AddressSummary> addresses = new List<AddressSummary>();
-            UpdateModel(addresses, formData);
+            try
+			{
+                UpdateModel(addresses, formData);
+            }
+            catch (InvalidOperationException ex)
+			{
+                // Provide feedback to user.
+			}
+
             return View(addresses);
 		}
     }
