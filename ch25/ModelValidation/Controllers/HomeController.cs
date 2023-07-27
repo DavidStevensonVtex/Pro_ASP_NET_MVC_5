@@ -14,11 +14,10 @@ namespace ModelValidation.Controllers
         [HttpPost]
         public ViewResult MakeBooking(Appointment appt)
 		{
-            // statements to store new Appointment in a
-            // repository would go here in a real project
-
             if (ModelState.IsValid)
 			{
+                // statements to store new Appointment in a
+                // repository would go here in a real project
                 return View("Completed", appt);
             }
             else
