@@ -32,6 +32,13 @@ namespace ModelValidation.Controllers
                 ModelState.AddModelError("TermsAccepted", "You must accept the terms");
 			}
 
+            // Joe cannot make Appointments on Monday
+            if (ModelState.IsValidField("ClientName") && ModelState.IsValidField("Date") &&
+                appt.ClientName == "Joe" && appt.Date.DayOfWeek == DayOfWeek.Monday)
+			{
+                ModelState.AddModelError("", "Joe cannot book appointments on Mondays");
+			}
+
             if (ModelState.IsValid)
 			{
                 return View("Completed", appt);
