@@ -4,6 +4,7 @@ using ModelValidation.Infrastructure;
 
 namespace ModelValidation.Models
 {
+	[NoJoeOnMondays]
 	public class Appointment
 	{
 		[Required(ErrorMessage = "Please enter your name")]
