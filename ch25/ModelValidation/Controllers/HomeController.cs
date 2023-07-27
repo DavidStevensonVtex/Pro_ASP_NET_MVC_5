@@ -17,20 +17,20 @@ namespace ModelValidation.Controllers
             // statements to store new Appointment in a
             // repository would go here in a real project
 
-            if (string.IsNullOrEmpty(appt.ClientName))
-			{
-                ModelState.AddModelError("ClientName", "Please enter your name");
-			}
+   //         if (string.IsNullOrEmpty(appt.ClientName))
+			//{
+   //             ModelState.AddModelError("ClientName", "Please enter your name");
+			//}
 
-            if (ModelState.IsValidField("Date") && DateTime.Now > appt.Date)
-			{
-                ModelState.AddModelError("Date", "Please enter a date in the future.");
-			}
+   //         if (ModelState.IsValidField("Date") && DateTime.Now > appt.Date)
+			//{
+   //             ModelState.AddModelError("Date", "Please enter a date in the future.");
+			//}
 
-            if (! appt.TermsAccepted)
-			{
-                ModelState.AddModelError("TermsAccepted", "You must accept the terms");
-			}
+   //         if (! appt.TermsAccepted)
+			//{
+   //             ModelState.AddModelError("TermsAccepted", "You must accept the terms");
+			//}
 
             // Joe cannot make Appointments on Monday
             if (ModelState.IsValidField("ClientName") && ModelState.IsValidField("Date") &&
