@@ -10,16 +10,17 @@
         .input-validation-error { border: 2px solid #f00 ; background-color: #fee ; }
         input[type="checkbox"].input-validation-error { outline: 2px solid #f00 ; }
     </style>
-    @*@Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")*@
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div>
-        @RenderBody()
-    </div>
+	<div>
+		@RenderBody()
+	</div>
 
-    @*@Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)*@
+	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/bootstrap")
+	@RenderSection("scripts", required: false)
 </body>
 </html>
