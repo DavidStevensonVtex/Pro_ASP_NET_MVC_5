@@ -9,7 +9,7 @@ namespace ModelValidation.Models
 		[Required(ErrorMessage = "Please enter your name")]
 		public string ClientName { get; set; }
 
-		[Required(ErrorMessage = "Please enter a date")]
+		[FutureDate(ErrorMessage = "Please enter a date in the future")]
 		[DataType(DataType.Date)]
 		public DateTime Date { get; set; }
 
