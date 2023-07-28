@@ -1,0 +1,48 @@
+﻿@model ClientFeatures.Models.Appointment
+
+@{
+	ViewBag.Title = "Make Appointment";
+	AjaxOptions ajaxOpts = new AjaxOptions
+	{
+		OnSuccess = "processResponse"
+	};
+}
+
+@section Scripts {
+	<script type="text/javascript">
+		function switchViews() {
+			$(".hidden, .visible").toggleClass("hidden visible");
+		}
+
+		function processResponse(appt) {
+			$('#successClientName').text( appt.ClientName ) ;
+		}
+
+		$(document).ready(function() {
+			$('#backButton').click(function(e) {
+				switchViews() ;
+			}) ;
+		}) ;
+	</script>
+}
+
+@section Body 
+{
+	<div id="formDiv" class="visible-lg well">
+		@using (Ajax.BeginForm(ajaxOpts))
+		{
+			<div class="form-group">
+				<label for="ClientName">Your name:</label>
+				<p>@Html.ValidationMessageFor(m => m.ClientName)</p>
+				@Html.TextBoxFor(m => m.ClientName)
+			</div>
+			<div class="checkbox">
+				<label>
+					@Html.CheckBoxFor(m => m.TermsAccepted)
+					I accept the terms & conditions
+				</label>
+			</div>
+			<input type="submit" value="Make Booking" class="btn btn-primary" />
+		}
+	</div>
+}
