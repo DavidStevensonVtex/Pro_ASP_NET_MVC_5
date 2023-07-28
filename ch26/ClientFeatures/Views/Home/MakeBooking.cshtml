@@ -15,20 +15,21 @@
 		}
 
 		function processResponse(appt) {
-			$('#successClientName').text( appt.ClientName ) ;
+			$('#successClientName').text(appt.ClientName);
+			switchViews();
 		}
 
-		$(document).ready(function() {
-			$('#backButton').click(function(e) {
-				switchViews() ;
-			}) ;
-		}) ;
+		$(document).ready(function () {
+			$('#backButton').click(function (e) {
+				switchViews();
+			});
+		});
 	</script>
 }
 
-@section Body 
+@section Body
 {
-	<div id="formDiv" class="visible-lg well">
+	<div id="formDiv" class="visible well">
 		@using (Ajax.BeginForm(ajaxOpts))
 		{
 			<div class="form-group">
