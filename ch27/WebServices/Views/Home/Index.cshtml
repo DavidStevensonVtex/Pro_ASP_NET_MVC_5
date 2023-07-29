@@ -19,6 +19,15 @@
             });
         }
 
+        function getAllItems() {
+            sendajaxRequest("GET", function (data) {
+                model.reservations.removeAll();
+                for (var i = 0; i < data.length; i++) {
+                    model.reservations.push(data[i]);
+				}
+			})
+		}
+
         function removeItem(item) {
             sendAjaxRequest("DELETE", function () {
                 getAllItems();
