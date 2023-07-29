@@ -13,14 +13,14 @@
         }
 
         function sendAjaxRequest(httpMethod, callback, url) {
-            $.ajax("api/web" + (url ? "/" + url : ""), {
+            $.ajax("/api/web" + (url ? "/" + url : ""), {
                 type: httpMethod,
                 success: callback
             });
         }
 
         function getAllItems() {
-            sendajaxRequest("GET", function (data) {
+			sendAjaxRequest("GET", function (data) {
                 model.reservations.removeAll();
                 for (var i = 0; i < data.length; i++) {
                     model.reservations.push(data[i]);
