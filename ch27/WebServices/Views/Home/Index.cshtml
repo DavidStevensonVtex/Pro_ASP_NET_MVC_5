@@ -30,7 +30,11 @@
 
         function removeItem(item) {
             sendAjaxRequest("DELETE", function () {
-                getAllItems();
+                for (var i = 0; i < model.reservations().length; i++) {
+                    if (model.reservations()[i].ReservationId == item.ReservationId) {
+                        model.reservations.remove(model.reservations()[i]);
+					}
+				}
             }, item.ReservationId)
         }
 
